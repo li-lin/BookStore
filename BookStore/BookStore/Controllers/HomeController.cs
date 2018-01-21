@@ -26,5 +26,10 @@ namespace BookStore.Controllers
 
             return View();
         }
+
+        public ActionResult Basic()
+        {
+            return View();
+        }
     }
 }
