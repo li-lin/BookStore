@@ -1,0 +1,48 @@
+﻿@using BookStore.Extenstions;
+@model IEnumerable<BookStore.Models.Author>
+
+@{
+    ViewBag.Title = "Authors";
+}
+
+<h2>Authors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach:authors">
+        <tr>
+            <td data-bind="text:FirstName"></td>
+            <td data-bind="text:LastName"></td>
+            <td>
+                <a data-bind="attr:{href:'@Url.Action("Details")/'+Id}" class="btn btn-info">Details</a>
+                <a data-bind="attr:{href:'@Url.Action("Edit")/'+Id}" class="btn btn-primary">Edit</a>
+                <a data-bind="attr:{href:'@Url.Action("Delete")/'+Id}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@section Scripts{
+    <script>
+        function ViewModel(authors) {
+            var self = this;
+            self.authors = authors;
+        }
+
+        var viewModel = new ViewModel(@Html.HtmlConvertToJson(Model));
+        ko.applyBindings(viewModel);
+    </script>    
+}

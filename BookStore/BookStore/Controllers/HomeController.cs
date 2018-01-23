@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -30,6 +31,16 @@ namespace BookStore.Controllers
         public ActionResult Basic()
         {
             return View();
+        }
+
+        public ActionResult Advanced()
+        {
+            var person = new Person()
+            {
+                FirstName = "Eric",
+                LastName = "McQuiggan"
+            };
+            return View(person);
         }
     }
 }
