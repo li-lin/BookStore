@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - BookStore - A Example for ASP.NET MVC5 using Bootstrap and Knockout.js</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/d79553e848.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -20,7 +21,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index","Home")">Home <span class="sr-only">(current)</span></a>
+
+                        <a class="nav-link" href="@Url.Action("Index","Home")"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("About","Home")">About</a>
@@ -37,6 +39,7 @@
                             <a class="dropdown-item" href="@Url.Action("Advanced","Home")">Advanced</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="@Url.Action("Index","Authors")">Authors</a>
                         </div>
                     </li>
                 </ul>
