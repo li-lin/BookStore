@@ -15,7 +15,7 @@ namespace BookStore.Models
         public QueryOptions()
         {
             CurrentPage = 1;
-            PageSize = 1;
+            PageSize = 3;
             SortField = "Id";
             SortOrder = SortOrder.ASC;
         }
