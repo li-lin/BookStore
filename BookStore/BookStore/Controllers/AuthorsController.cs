@@ -20,7 +20,15 @@ namespace BookStore.Controllers
         // GET: Authors
         public ActionResult Index([Form]QueryOptions queryOptions)
         {
-            var authors = db.Authors.OrderBy(queryOptions.Sort);
+            var start = (queryOptions.CurrentPage - 1) * queryOptions.PageSize;
+
+            var authors = db.Authors
+                .OrderBy(queryOptions.Sort)
+                .Skip(start)
+                .Take(queryOptions.PageSize);
+
+            queryOptions.TotalPages = (int)Math.Ceiling((double)db.Authors.Count() / queryOptions.PageSize);
+
             ViewBag.QueryOptions = queryOptions;
             return View(authors.ToList());
         }

@@ -9,8 +9,13 @@ namespace BookStore.Models
     {
         public string SortField { get; set; }
         public SortOrder SortOrder { get; set; }
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; } 
+        public int PageSize { get; set; }
         public QueryOptions()
         {
+            CurrentPage = 1;
+            PageSize = 1;
             SortField = "Id";
             SortOrder = SortOrder.ASC;
         }

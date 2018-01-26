@@ -11,41 +11,46 @@
 </head>
 <body>
     <!--Another style Navbar Start-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
-            <a class="navbar-brand" href="#">BookStore</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="@Url.Action("Index","Home")"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#navbar-main">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">BookStore</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="@Url.Action("Index","Home")"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("About","Home")">About</a>
+                    <li>
+                        <a href="@Url.Action("About","Home")">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="@Url.Action("Contact","Home")">Contact</a>
+                    <li>
+                        <a href="@Url.Action("Contact","Home")">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            More
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More<span class="caret"></span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="@Url.Action("Basic","Home")">Basic</a>
-                            <a class="dropdown-item" href="@Url.Action("Advanced","Home")">Advanced</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <a class="dropdown-item" href="@Url.Action("Index","Authors")">Authors</a>
-                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Basic","Home")">Basic</a></li>
+                            <li><a href="@Url.Action("Advanced","Home")">Advanced</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="@Url.Action("Index","Authors")">Authors</a></li>
+                        </ul>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="BookStore...">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
                 </form>
             </div>
         </div>
