@@ -1,4 +1,4 @@
-﻿function AuthorFormViewModel() {
+﻿function AuthorFormViewModel(author) {
     var self = this;
 
     //使用ko.observable将self的三个属性均设置为监控变量，knockout就会开始跟踪它们的变化。

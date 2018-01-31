@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using BookStore.DAL;
 using BookStore.Models;
 using System.Web.ModelBinding;
+using System.Threading;
 
 namespace BookStore.Controllers
 {
@@ -95,6 +96,7 @@ namespace BookStore.Controllers
         {
             if (ModelState.IsValid)
             {
+                Thread.Sleep(3000);
                 db.Entry(author).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
